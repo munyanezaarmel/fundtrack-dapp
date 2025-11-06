@@ -1,88 +1,111 @@
-# 🏗 Scaffold-ETH 2
+# 🌍 FundTrack
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+**FundTrack** FundTrack is a blockchain-based platform designed to bring transparency, accountability, and trust to development funding.
+It helps ensure that money meant for projects like hospitals, schools, or renewable energy is used exactly as intended, reducing fund misuse and restoring investor confidence.
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+---
 
-⚙️ Built using NextJS, RainbowKit, Foundry/Hardhat, Wagmi, Viem, and Typescript.
+## 🚨 Problem Statement
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+In many developing countries, public and donor-funded projects often suffer from **corruption, inefficiency, and lack of transparency**.  
+For example, in **South Sudan**, communities face difficulties attracting investors because of a **history of fund misuse** and **limited accountability** in how development funds are distributed and monitored.
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+Government officials or agencies typically manage these funds manually, leading to:
 
-## Requirements
+- Delayed or incomplete project execution  
+- Fake project reporting with no physical progress  
+- Donors losing trust due to poor visibility on how funds are spent  
+- Citizens being unaware of ongoing or completed public projects  
 
-Before you begin, you need to install the following tools:
+These issues reduce investor confidence and make it harder for genuine local projects to get funded.  
+There is an urgent need for a **trustless system** that ensures **funds are used for their intended purpose** — without relying on human intermediaries.
 
-- [Node (>= v20.18.3)](https://nodejs.org/en/download/)
-- Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
-- [Git](https://git-scm.com/downloads)
+---
 
-## Quickstart
+## 💡 Solution
 
-To get started with Scaffold-ETH 2, follow the steps below:
+**FundTrack** leverages **Ethereum smart contracts** to automatically manage funds based on verified progress.
 
-1. Install the latest version of Scaffold-ETH 2
+1. **Project Creation:** Verified users (e.g., NGOs, government wallets) post projects needing funding.  
+2. **Funding:** Donors contribute transparently using cryptocurrency.  
+3. **Verification:** Before each milestone payment is released, the system requires **proof of completion** — verified via **satellite data, AI image analysis**, or **community oracles**.  
+4. **Fund Release:** Once verified, the smart contract releases funds automatically, ensuring that **money follows progress**.
 
-```
-npx create-eth@latest
-```
+This creates a **decentralized, tamper-proof funding process** that builds **trust** among donors, government bodies, and citizens.
 
-This command will install all the necessary packages and dependencies, so it might take a while.
+---
 
-> [!NOTE]
-> You can also initialize your project with one of our extensions to add specific features or starter-kits. Learn more in our [extensions documentation](https://docs.scaffoldeth.io/extensions/).
+## ⚙️ Tech Stack
 
-2. Run a local network in the first terminal:
+- **Scaffold-ETH 2** (Next.js, Hardhat, Wagmi, Viem)  
+- **Solidity** for smart contracts  
+- **Ethers.js** for blockchain interactions  
+- **Tailwind CSS** for frontend design  
+- **Node.js Oracle** (optional) for verification via APIs  
+- **IPFS / Pinata** for decentralized project data (optional)
 
-```
+---
+
+## 🧩 How It Works
+
+1. **Create Project:** A verified wallet posts project details and milestones.  
+2. **Fund Project:** Users or donors fund the project directly on-chain.  
+3. **Verify Milestones:** Oracle checks satellite or image data for completion progress.  
+4. **Automatic Release:** Smart contract releases the next milestone payment when verified.  
+5. **Dashboard:** Publicly displays all transactions for full transparency.
+
+---
+## Future Additions
+
+- 🛰️ Satellite Oracles: Automated milestone verification using Earth observation data.
+
+- 🤖 AI Image Analysis: Analyze satellite images to detect progress (e.g., building size or color).
+
+- 📱 IoT Integration (future): Smart sensors to track energy usage, water flow, or emissions.
+
+- 🧾 Impact Reports: Automatically generated reports for donors and stakeholders.
+
+## 👥 Who Benefits
+
+- Investors & Donors: Gain confidence that their money is used properly.
+
+- Governments: Can attract more funding by being transparent.
+
+- Communities: Receive better-managed, faster, and verifiable development projects.
+
+## Example Scenario
+
+Project: Build a water well in Juba, South Sudan
+
+- The Ministry of Water connects its wallet and creates the project.
+
+- Donors fund the project with $10,000 worth of crypto.
+
+- Milestone 1: Digging completed — verified via a satellite or local report.
+
+- Smart contract releases 30% of the funds.
+
+- Milestone 2: Well structure complete — next 50% released.
+
+- Final verification — all funds distributed transparently.
+
+- Every step is visible on-chain, so anyone can see the flow of funds and project progress.
+
+## 🛠️ Run Locally
+
+```bash
+# 1. Clone repo
+git clone https://github.com/yourusername/fundtrack.git
+cd fundtrack
+
+# 2. Install dependencies
+yarn install
+
+# 3. Start local blockchain
 yarn chain
-```
 
-This command starts a local Ethereum network that runs on your local machine and can be used for testing and development. Learn how to [customize your network configuration](https://docs.scaffoldeth.io/quick-start/environment#1-initialize-a-local-blockchain).
-
-3. On a second terminal, deploy the test contract:
-
-```
+# 4. Deploy smart contracts
 yarn deploy
-```
 
-This command deploys a test smart contract to the local network. You can find more information about how to customize your contract and deployment script in our [documentation](https://docs.scaffoldeth.io/quick-start/environment#2-deploy-your-smart-contract).
-
-4. On a third terminal, start your NextJS app:
-
-```
+# 5. Run frontend
 yarn start
-```
-
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-**What's next**:
-
-Visit the [What's next section of our docs](https://docs.scaffoldeth.io/quick-start/environment#whats-next) to learn how to:
-
-- Edit your smart contracts
-- Edit your deployment scripts
-- Customize your frontend
-- Edit the app config
-- Writing and running tests
-- [Setting up external services and API keys](https://docs.scaffoldeth.io/deploying/deploy-smart-contracts#configuration-of-third-party-services-for-production-grade-apps)
-
-## Documentation
-
-Visit our [docs](https://docs.scaffoldeth.io) to learn all the technical details and guides of Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
-
-## Contributing to Scaffold-ETH 2
-
-We welcome contributions to Scaffold-ETH 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.

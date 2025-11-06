@@ -10,6 +10,7 @@
   },
   "scripts": {
     "account": "yarn hardhat:account",
+    "hardhat": "hardhat",
     "account:import": "yarn workspace @se-2/hardhat account:import",
     "account:generate": "yarn workspace @se-2/hardhat account:generate",
     "account:reveal-pk": "yarn workspace @se-2/hardhat account:reveal-pk",
@@ -52,6 +53,7 @@
   },
   "packageManager": "yarn@3.2.3",
   "devDependencies": {
+    "hardhat": "^3.0.12",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10"
   },
