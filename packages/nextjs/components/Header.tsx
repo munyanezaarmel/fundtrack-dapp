@@ -70,7 +70,7 @@ export const Header = () => {
       <div className="navbar-start w-auto lg:w-1/2">
         <details className="dropdown" ref={burgerMenuRef}>
           <summary className="ml-1 btn btn-ghost lg:hidden hover:bg-transparent">
-            <Bars3Icon className="h-1/2" />
+            {/* <Bars3Icon className="h-1/2" /> */}
           </summary>
           <ul
             className="menu menu-compact dropdown-content mt-3 p-2 shadow-sm bg-base-100 rounded-box w-52"
@@ -82,22 +82,22 @@ export const Header = () => {
           </ul>
         </details>
         <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-6 shrink-0">
-          <div className="flex relative w-10 h-10">
+          {/* <div className="flex relative w-10 h-10">
             <Image alt="SE2 logo" className="cursor-pointer" fill src="/logo.svg" />
-          </div>
-          <div className="flex flex-col">
+          </div> */}
+          {/* <div className="flex flex-col">
             <span className="font-bold leading-tight">Scaffold-ETH</span>
             <span className="text-xs">Ethereum dev stack</span>
-          </div>
+          </div> */}
         </Link>
-        <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
+        {/* <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
           <HeaderMenuLinks />
-        </ul>
+        </ul> */}
       </div>
-      <div className="navbar-end grow mr-4">
+      {/* <div className="navbar-end grow mr-4">
         <RainbowKitCustomConnectButton />
         {isLocalNetwork && <FaucetButton />}
-      </div>
+      </div> */}
     </div>
   );
 };
